@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  openinterpreter:
+    restart: unless-stopped
+    build: ./open-interpreter-docker/container-gui
+    volumes:
+      - openinterpreter-data:/root
+    ports:
+      # WebVNC(GUI)
+      - 6080:80
+
+volumes:
+  openinterpreter-data:
